@@ -7,7 +7,7 @@ $white: #fff;
 $black: #000000;
 $darken: #232931;
 
-$primary: #ffbd39;
+$primary: #8b5cf6;
 $secondary: #a0f669;
 
 
@@ -1375,16 +1375,7 @@ textarea.form-control {
 		letter-spacing: 3px;
 	}
 	h1.big{
-		position: absolute;
-		top: 0px;
-		left: 0;
-		font-size: 7vw;
-		color: rgba(255,255,255,.1);
-		z-index: -1;
-		font-weight: 900;
-		&.big-2{
-			right: 0;
-		}
+		display: none;
 	}
 	h2{
 		font-size: 50px;
@@ -1985,4 +1976,272 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+//EDUCATION TIMELINE
+.edu-timeline{
+	position: relative;
+	padding-left: 70px;
+	&:before{
+		content: '';
+		position: absolute;
+		left: 27px;
+		top: 12px;
+		bottom: 12px;
+		width: 1px;
+		background: rgba(255,255,255,.15);
+	}
+}
+.edu-item{
+	position: relative;
+	margin-bottom: 50px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.edu-badge{
+	position: absolute;
+	left: -70px;
+	top: 0;
+	width: 54px;
+	height: 54px;
+	@include border-radius(12px);
+	background: rgba(255,255,255,.06);
+	border: 1px solid rgba(255,255,255,.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	span{
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		color: $primary;
+	}
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.edu-head{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.edu-school{
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+	margin: 0;
+}
+.edu-date{
+	font-size: 13px;
+	color: rgba(255,255,255,.7);
+	background: rgba(255,255,255,.07);
+	border: 1px solid rgba(255,255,255,.12);
+	@include border-radius(20px);
+	padding: 5px 16px;
+	white-space: nowrap;
+}
+.edu-degree{
+	font-size: 15px;
+	color: $primary;
+	margin: 6px 0 0 0;
+}
+.edu-points{
+	list-style: none;
+	padding: 0;
+	margin: 16px 0 0 0;
+	li{
+		position: relative;
+		padding-left: 18px;
+		margin-bottom: 10px;
+		font-size: 15px;
+		color: rgba(255,255,255,.75);
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 9px;
+			width: 5px;
+			height: 5px;
+			@include border-radius(50%);
+			background: $primary;
+		}
+	}
+}
+.edu-sub-heading{
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,.5);
+	margin: 24px 0 12px 0;
+}
+.edu-publication{
+	border-left: 2px solid rgba(255,255,255,.18);
+	padding-left: 16px;
+	h5{
+		font-size: 15px;
+		font-weight: 600;
+		color: #fff;
+		margin: 0;
+	}
+}
+.edu-pub-meta{
+	font-size: 13px;
+	color: rgba(255,255,255,.6);
+	margin: 5px 0 0 0;
+}
+.edu-pub-links{
+	margin: 8px 0 0 0;
+	font-size: 14px;
+	a{
+		color: $primary;
+		&:hover{
+			color: lighten($primary,10%);
+		}
+	}
+}
+.edu-award{
+	margin-left: 14px;
+	color: #ffbd39;
+}
+@media (max-width: 767.98px){
+	.edu-timeline{
+		padding-left: 0;
+		&:before{
+			display: none;
+		}
+	}
+	.edu-badge{
+		position: relative;
+		left: 0;
+		margin-bottom: 16px;
+	}
+	.edu-head{
+		align-items: flex-start;
+	}
+	.edu-date{
+		margin-top: 8px;
+	}
+	.edu-award{
+		display: block;
+		margin-left: 0;
+		margin-top: 6px;
+	}
+}
+//EXPERIENCE TIMELINE
+.exp-timeline{
+	position: relative;
+	padding-left: 70px;
+	&:before{
+		content: '';
+		position: absolute;
+		left: 27px;
+		top: 12px;
+		bottom: 12px;
+		width: 1px;
+		background: rgba(255,255,255,.15);
+	}
+}
+.exp-item{
+	position: relative;
+	margin-bottom: 50px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.exp-badge{
+	position: absolute;
+	left: -70px;
+	top: 0;
+	width: 54px;
+	height: 54px;
+	@include border-radius(12px);
+	background: rgba(255,255,255,.06);
+	border: 1px solid rgba(255,255,255,.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	span{
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		color: $primary;
+	}
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.exp-head{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.exp-role{
+	font-size: 20px;
+	font-weight: 700;
+	color: $primary;
+	margin: 0;
+}
+.exp-date{
+	font-size: 13px;
+	color: rgba(255,255,255,.7);
+	background: rgba(255,255,255,.07);
+	border: 1px solid rgba(255,255,255,.12);
+	@include border-radius(20px);
+	padding: 5px 16px;
+	white-space: nowrap;
+}
+.exp-org{
+	font-size: 15px;
+	color: rgba(255,255,255,.6);
+	margin: 6px 0 0 0;
+}
+.exp-points{
+	list-style: none;
+	padding: 0;
+	margin: 16px 0 0 0;
+	li{
+		position: relative;
+		padding-left: 18px;
+		margin-bottom: 10px;
+		font-size: 15px;
+		color: rgba(255,255,255,.75);
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 9px;
+			width: 5px;
+			height: 5px;
+			@include border-radius(50%);
+			background: $primary;
+		}
+	}
+}
+@media (max-width: 767.98px){
+	.exp-timeline{
+		padding-left: 0;
+		&:before{
+			display: none;
+		}
+	}
+	.exp-badge{
+		position: relative;
+		left: 0;
+		margin-bottom: 16px;
+	}
+	.exp-head{
+		align-items: flex-start;
+	}
+	.exp-date{
+		margin-top: 8px;
+	}
 }
