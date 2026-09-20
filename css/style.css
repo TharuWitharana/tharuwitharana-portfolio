@@ -9209,13 +9209,14 @@ textarea.form-control {
   .heading-section h1.big {
     display: none; }
   .heading-section h2 {
-    font-size: 50px;
-    font-weight: 700; }
+    font-size: 36px;
+    font-weight: 700;
+    color: #8b5cf6; }
     .heading-section h2 span {
       font-weight: 400; }
     @media (max-width: 767.98px) {
       .heading-section h2 {
-        font-size: 38px; } }
+        font-size: 28px; } }
   .heading-section.heading-section-white .subheading {
     color: rgba(255, 255, 255, 0.9) !important; }
   .heading-section.heading-section-white h2 {
@@ -9999,15 +10000,11 @@ textarea.form-control {
 .get-in-touch-title {
   color: #8b5cf6;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 14px;
 }
 .get-in-touch-rule {
-  display: inline-block;
-  width: 120px;
-  height: 4px;
-  border-radius: 2px;
-  background: #8b5cf6;
+  display: none;
 }
 .get-in-touch-card {
   background: #16161d;
@@ -10064,7 +10061,7 @@ textarea.form-control {
 
 @media (max-width: 767.98px) {
   .get-in-touch-title {
-    font-size: 30px;
+    font-size: 28px;
   }
   .get-in-touch-card {
     padding: 2em 1.25em;
