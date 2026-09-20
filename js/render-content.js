@@ -239,11 +239,81 @@
       return '<span class="project-status ' + kind + '">' + esc(text) + "</span>";
     }
 
+    // Descriptions are clamped to keep a row of cards even, which would
+    // otherwise cut long ones off with no way to read the rest. Only the
+    // descriptions that actually overflow get a "Read more" toggle, so short
+    // ones stay clean. Measured after layout, and re-measured on resize
+    // because a narrower card wraps to more lines.
+    function setupDescToggles() {
+      var wraps = document.querySelectorAll(".project-desc-wrap");
+
+      function sync() {
+        for (var i = 0; i < wraps.length; i++) {
+          var wrap = wraps[i];
+          var desc = wrap.querySelector(".project-card-desc");
+          var btn = wrap.querySelector(".project-desc-toggle");
+          if (!desc) continue;
+
+          // An expanded card is always overflowing by definition, so only
+          // measure while clamped.
+          if (wrap.classList.contains("is-expanded")) continue;
+
+          var overflows = desc.scrollHeight - desc.clientHeight > 2;
+          if (overflows && !btn) {
+            btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "project-desc-toggle";
+            btn.setAttribute("aria-expanded", "false");
+            btn.innerHTML = '<span class="project-desc-toggle-text">Read more</span>' +
+              '<span class="icon-keyboard_arrow_down project-desc-toggle-caret"></span>';
+            btn.addEventListener("click", toggle);
+            wrap.appendChild(btn);
+            wrap.classList.add("is-clamped");
+          } else if (!overflows && btn) {
+            btn.parentNode.removeChild(btn);
+            wrap.classList.remove("is-clamped");
+          }
+        }
+      }
+
+      function toggle(e) {
+        var btn = e.currentTarget;
+        var wrap = btn.parentNode;
+        var open = !wrap.classList.contains("is-expanded");
+        wrap.classList.toggle("is-expanded", open);
+        wrap.classList.toggle("is-clamped", !open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.querySelector(".project-desc-toggle-text").textContent =
+          open ? "Show less" : "Read more";
+      }
+
+      sync();
+
+      var t;
+      window.addEventListener("resize", function () {
+        clearTimeout(t);
+        t = setTimeout(sync, 150);
+      });
+
+      // Cards behind "See More Projects" are hidden and measure as zero-height,
+      // so they need a second pass once they are actually laid out.
+      return sync;
+    }
+
     var cards = items.map(function (p, idx) {
       var hidden = idx >= (d.initialCount || items.length);
 
       var meta = [];
-      if (p.category) meta.push('<span class="project-category">' + esc(p.category) + "</span>");
+      if (p.category) {
+        // "Personal Project" -> "is-personal", so each category gets its own
+        // colour below. Anything unrecognised falls back to the base style.
+        var slug = p.category.toLowerCase();
+        var kind = slug.indexOf("personal") > -1 ? " is-personal"
+          : slug.indexOf("academic") > -1 ? " is-academic"
+          : slug.indexOf("industry") > -1 ? " is-industry"
+          : "";
+        meta.push('<span class="project-category' + kind + '">' + esc(p.category) + "</span>");
+      }
       if (p.date) meta.push('<span class="project-date">' + esc(p.date) + "</span>");
 
       var tech = (p.tech || []).length
@@ -277,13 +347,18 @@
         '<div class="project-card-body">' +
         (meta.length ? '<div class="project-card-meta">' + meta.join("") + "</div>" : "") +
         '<h3 class="project-card-title">' + esc(p.title) + "</h3>" +
-        (p.description ? '<p class="project-card-desc">' + esc(p.description) + "</p>" : "") +
+        (p.description
+          ? '<div class="project-desc-wrap">' +
+            '<p class="project-card-desc">' + esc(p.description) + "</p>" +
+            "</div>"
+          : "") +
         tech + links +
         "</div></article></div>"
       );
     });
 
     set("projects-list", cards.join(""));
+    var syncDescToggles = setupDescToggles();
 
     var extras = document.querySelectorAll(".project-col-extra");
     var toggleWrap = document.getElementById("projects-toggle");
@@ -309,6 +384,9 @@
       btn.classList.toggle("is-expanded", expanded);
       btn.querySelector(".project-toggle-text").textContent =
         expanded ? lessLabel : moreLabel;
+
+      // The newly revealed cards could not be measured while hidden.
+      if (expanded) syncDescToggles();
 
       // Collapsing from far down the list would otherwise leave the viewport
       // below the section; bring the heading back into view.

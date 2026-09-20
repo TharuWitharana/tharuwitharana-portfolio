@@ -3,10 +3,10 @@
   "hero": {
     "subheading": "Hello!",
     "heading": "Hi, I'm <span>Tharushi Witharana</span>",
-    "rolePrefix": "I'm a ",
+    "rolePrefix": "I'm ",
     "roles": [
-      "Software Engineer",
-      "AI Engineer"
+      "a Software Engineer",
+      "an AI Engineer"
     ],
     "primaryButton": {
       "label": "Hire me",
@@ -285,20 +285,34 @@
     "showMoreLabel": "See More Projects",
     "showLessLabel": "Show Less",
     "items": [
+            {
+        "title": "Easy Rent",
+        "category": "Personal Project",
+        "status": "Ongoing",
+        "date": "Sept 2026 - Present",
+        "icon": "https://cdn.dribbble.com/userupload/42830572/file/original-fdb253e8e002b59b56a2503429225c18.png?resize=400x0",
+        "description": "A rental marketplace that makes finding a place to stay straightforward, covering houses, apartments, annexes, boarding houses and rooms. Owners list properties with photos, rent, facilities and location, while renters search and filter by area, budget, property type and availability, then contact owners directly. Built with a React front end and a Node.js and Express backend over MySQL, with Keycloak handling authentication and role based access for owners and renters. Planned next: a payment gateway for booking fees and advance payments, map based search, and an AI assistant that answers listing questions in natural language.",
+        "tech": [
+          "React",
+          "Node.js",
+          "Express",
+          "MySQL",
+          "Keycloak",
+          "REST API"
+        ],
+        "links": []
+      },
       {
         "title": "Sense AI",
         "category": "Industry Project",
-        "status": "Ongoing",
         "date": "May 2026 - Present",
         "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUogrPltNgde6Hbxv4uzMIntOP54fGVA7E6IIA0OtuHQ&s=10",
         "description": "Five AI agent applications built to replace human voice agents in call centre operations. Agents are orchestrated over IVR systems and integrated with a call centre management application, alongside contributions to the Workforce Management System.",
         "tech": [
           "Python",
-          "FastAPI",
-          "Google ADK",
+          "NodeJS",
           "React",
-          "MySQL",
-          "IVR"
+          "MySQL"
         ],
         "links": []
       },

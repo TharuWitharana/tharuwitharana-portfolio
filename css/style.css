@@ -10399,6 +10399,32 @@ textarea.form-control {
 .project-card-meta .project-category {
   color: #8b5cf6;
   font-weight: 600;
+  /* Rendered as a tinted chip so the three categories read apart at a glance;
+     the per-category colours below only swap the hue. */
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  line-height: 1.4;
+}
+.project-card-meta .project-category.is-personal {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.38);
+}
+.project-card-meta .project-category.is-academic {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.38);
+}
+.project-card-meta .project-category.is-industry {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.38);
+}
+.project-card-meta .project-date {
+  /* Keeps the date baseline aligned with the chip next to it. */
+  align-self: center;
 }
 .project-card-title {
   font-size: 19px;
@@ -10407,17 +10433,77 @@ textarea.form-control {
   margin-bottom: 12px;
   color: #8b5cf6;
 }
+.project-desc-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
 .project-card-desc {
   font-size: 14.5px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 20px;
+  margin-bottom: 0;
   /* Descriptions differ a lot in length; clamping keeps a row of cards even
-     instead of leaving a long gap above the shorter ones' tech pills. */
+     instead of leaving a long gap above the shorter ones' tech pills. The
+     clamp is lifted by .is-expanded when the reader opens the card. */
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.project-desc-wrap.is-expanded .project-card-desc {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+/* Fades the last clamped line into the card so it reads as cut off on purpose
+   rather than as a sentence that just stops. */
+.project-desc-wrap.is-clamped:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  height: 34px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(22, 22, 29, 0), rgba(22, 22, 29, 0.95));
+}
+.project-desc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color .2s ease;
+  /* No outline after a click -- :focus-visible below still rings it for
+     keyboard users, so this drops the mouse-click box only. */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.project-desc-toggle:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.project-desc-toggle:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.6);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.project-desc-toggle:hover,
+.project-desc-toggle:focus-visible {
+  color: #a78bfa;
+}
+.project-desc-toggle-caret {
+  font-size: 15px;
+  transition: transform .25s ease;
+}
+.project-desc-wrap.is-expanded .project-desc-toggle-caret {
+  transform: rotate(180deg);
 }
 /* Pushes the tech stack to the bottom so pill rows align across a row of cards. */
 .project-tech {
