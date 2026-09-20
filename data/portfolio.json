@@ -1,0 +1,470 @@
+{
+  "_comment": "Edit this file to update the site. Every section below maps to a section on the page. Save, then refresh the browser. Keep the JSON structure intact: quotes around text, commas between items, no trailing comma after the last item in a list.",
+  "hero": {
+    "subheading": "Hello!",
+    "heading": "Hi, I'm <span>Tharushi Witharana</span>",
+    "rolePrefix": "I'm a ",
+    "roles": [
+      "Software Engineer",
+      "AI Engineer"
+    ],
+    "primaryButton": {
+      "label": "Hire me",
+      "href": "#contact-section"
+    },
+    "secondaryButton": {
+      "label": "My works",
+      "href": "#projects-section"
+    }
+  },
+  "about": {
+    "image": "images/bg_1.png",
+    "paragraphs": [
+      "I'm an Electrical and Information Engineering graduate from the Faculty of Engineering, University of Ruhuna, specializing in software engineering, with a keen interest in web development and agentic AI application development.",
+      "I currently work as an Associate Software Engineer at Global Wavenet International (Pvt) Ltd, where I build agentic AI applications and voice AI agents for telecommunication and call center operations, and contribute to full stack product development.",
+      "I have hands-on experience across the stack: React, Next.js, Node.js and Express, Python FastAPI and Flask, Java Spring Boot, and mobile development with Flutter. On the AI side I work with LangChain, LangGraph, Google ADK, the Model Context Protocol (MCP), RAG pipelines, and the Anthropic and OpenAI APIs.",
+      "Adept at taking on responsibilities, passionate about learning new stacks, and committed to contributing effectively to team goals."
+    ],
+    "info": [
+      {
+        "label": "Name",
+        "value": "Tharushi Witharana"
+      },
+      {
+        "label": "Phone",
+        "value": "+94 72 608 0354"
+      },
+      {
+        "label": "Email",
+        "value": "tharushiwitharana@gmail.com"
+      },
+      {
+        "label": "GitHub",
+        "value": "TharuWitharana",
+        "href": "https://github.com/TharuWitharana"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "Tharushi Maleesha Witharana",
+        "href": "https://www.linkedin.com/in/tharushi-maleesha-witharana-b755001b6"
+      }
+    ]
+  },
+  "education": [
+    {
+      "badge": "UOR",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-49SVFofC0JPHPl_1FBC_6akTuuwKS35jKONIVhlwTA&s=10",
+      "school": "University of Ruhuna, Galle, Sri Lanka",
+      "date": "March 2020 - March 2025",
+      "degree": "BSc. Eng (Hons) in Electrical and Information Engineering",
+      "field": "",
+      "points": [
+        "Second Class Upper Division (GPA 3.46)",
+        "Majoring Software Engineering Scheme",
+        "Relevant coursework: Data Structures and Algorithms, Database Systems, Computer Architecture, Computer Networks, Operating Systems Programming, Software Architecture, Object-Oriented Design Patterns and Principles, Web Application Development, Embedded Systems Design, Machine Learning, Artificial Intelligence, Computer Vision and Image Processing"
+      ],
+      "publications": [
+        {
+          "title": "Tea Leaf Disease Detection via Machine Learning",
+          "venue": "APITT International Conference",
+          "year": "2024",
+          "link": "",
+          "award": ""
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "date": "2025 Apr - Present",
+      "role": "Associate Software Engineer",
+      "organization": "Global Wavenet International (Pvt) Ltd",
+      "badge": "GW",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXGn4aCUtK-LeoAU_zbPwx560GnByVmJa3Z-08pk6Qg&s=10",
+      "points": [
+        "Developing a workforce management application for call center operations, covering full stack development.",
+        "Built five voice AI agents for call center automation for a large-scale telecommunication company in Colombia.",
+        "Contributed to the front-end migration of the Compose project from Angular 7 to React.",
+        "Built AI agents for the Agentic Campaign Manager, which orchestrates three specialized agents behind a supervisor agent for campaign creation, segmentation, and natural-language database retrieval.",
+        "Delivered AI-Troubleshooter v2.0 with agentic enhanced AI features and a redesigned UI, plus AI-Ops as an Electron.js desktop application with an OCLIF companion CLI."
+      ]
+    },
+    {
+      "date": "2024 Nov - 2025 Apr",
+      "role": "Software Engineering Intern",
+      "organization": "Global Wavenet International (Pvt) Ltd",
+      "badge": "GW",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXGn4aCUtK-LeoAU_zbPwx560GnByVmJa3Z-08pk6Qg&s=10",
+      "points": [
+        "Built AI-Troubleshooter v1.0 and InsightDB v1.0, two agentic AI web applications for operations engineers.",
+        "Conducted R&D on AI agents and the Model Context Protocol (MCP) that informed later production work.",
+        "Gained end-to-end delivery experience from product deployment on local servers.",
+        "Fixed bugs in existing products such as Prime and Campaign Manager and engaged in load testing."
+      ]
+    },
+    {
+      "date": "2023 Sep - 2024 Jan",
+      "role": "Software Engineering Intern",
+      "organization": "Lightway IT (Pvt) Ltd",
+      "badge": "LW",
+      "logo": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlmqD6RwUucWFTt1iuFkK-YJMwLdeqpGHKt52ITX7C7BEIJJ6NCc_85GDK_YNh2-qlJd_KtprDXphMe-BvAUL2MZXPVfEu11x9qRB2SbjROYJSKDi7TOrJUJBV8TrWOAEwK9am8=s680-w680-h510-rw",
+      "points": [
+        "Developed a RAG-based customer assistance chatbot using LangChain and OpenAI GPT, reducing response time and improving customer satisfaction.",
+        "Integrated the chat application into Meta WhatsApp, Instagram, Facebook, and Telegram webhooks with a REST endpoint on AWS Lambda.",
+        "Built the management backend using Express.js and Node.js with DynamoDB and MySQL."
+      ]
+    },
+    {
+      "date": "2024 Jan - 2025 Jan",
+      "role": "Student Instructor",
+      "organization": "Department of Electrical and Information Engineering, FOE, University of Ruhuna",
+      "badge": "EIE",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDE_JYV45t47I76fKW1cPZviTpn9hmyuKxOR4cyEeu2g&s=10",
+      "points": [
+        "Conducted laboratory sessions on electrical and electronic modules for first- and second-year undergraduates.",
+        "Guided students through core concepts and debugging their code.",
+        "Supported evaluation activities at the Faculty of Engineering, University of Ruhuna."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "C",
+        "C++",
+        "SQL",
+        "Erlang"
+      ]
+    },
+    {
+      "category": "Web Development Technologies, Libraries and Frameworks",
+      "items": [
+        "React",
+        "Next.js",
+        "Angular",
+        "HTML",
+        "CSS",
+        "ShadCN",
+        "Bootstrap",
+        "Ant Design",
+        "MERN Stack (MongoDB, Express.js, React.js, Node.js)",
+        "Java Spring Boot",
+        "Python Flask",
+        "Python FastAPI",
+        "JEE",
+        "Electron.js",
+        "Jest"
+      ]
+    },
+    {
+      "category": "AI / ML",
+      "items": [
+        "Agentic AI",
+        "LangChain",
+        "LangGraph",
+        "Google ADK",
+        "Model Context Protocol (MCP)",
+        "RAG",
+        "LLMs",
+        "Anthropic Claude API",
+        "OpenAI API",
+        "OpenAI Assistant API",
+        "Ollama",
+        "NVIDIA AI Models",
+        "Azure AI Search",
+        "Generative AI",
+        "Machine Learning",
+        "Deep Learning"
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "DynamoDB",
+        "Vector Databases"
+      ]
+    },
+    {
+      "category": "APIs",
+      "items": [
+        "REST",
+        "WebSocket",
+        "Server-Sent Events (SSE)"
+      ]
+    },
+    {
+      "category": "Mobile App Development",
+      "items": [
+        "Flutter",
+        "Dart"
+      ]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": [
+        "AWS (Lambda, S3, CloudWatch, DynamoDB)",
+        "DigitalOcean",
+        "Azure Fundamentals",
+        "Linux",
+        "Docker",
+        "Nginx",
+        "PM2",
+        "Nexus"
+      ]
+    },
+    {
+      "category": "Developer Tools",
+      "items": [
+        "Claude Code",
+        "Windsurf",
+        "VS Code",
+        "IntelliJ IDEA",
+        "Android Studio",
+        "Ubuntu VMs",
+        "Keycloak",
+        "OCLIF",
+        "GitHub",
+        "Bitbucket"
+      ]
+    },
+    {
+      "category": "Project Management Tools",
+      "items": [
+        "Jira (Kanban, Agile methodology)"
+      ]
+    },
+    {
+      "category": "UI/UX Design",
+      "items": [
+        "Figma"
+      ]
+    },
+    {
+      "category": "Other Software Engineering related Skills",
+      "items": [
+        "Object Oriented Programming using C++",
+        "Object Oriented Design Patterns using Java",
+        "Computer Network Fundamentals",
+        "Embedded System Programming using C"
+      ]
+    },
+    {
+      "category": "Certifications and Badges",
+      "items": [
+        "Microsoft Learn: Cloud Skills Challenge - Azure Fundamentals (AZ-900)",
+        "HackerRank: C++ Silver Badge, Java Silver Badge",
+        "LinkedIn Learning: AWS Exam Prep, Learning Ansible, Learning Kubernetes, MERN Essential Training",
+        "Sololearn: C, Introduction to C++, Introduction to HTML, Introduction to JavaScript, Python for Beginners",
+        "Great Learning: Serverless Computing",
+        "Simplilearn: Generative AI"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        "Leadership Skills",
+        "Communication Skills",
+        "Team Working",
+        "Time Management",
+        "Critical Thinking",
+        "Problem Solving"
+      ]
+    }
+  ],
+  "projects": {
+    "intro": "A mix of production systems I build at work and research-driven academic projects. Each card lists the stack it was built on.",
+    "initialCount": 3,
+    "showMoreLabel": "See More Projects",
+    "showLessLabel": "Show Less",
+    "items": [
+      {
+        "title": "Sense AI",
+        "category": "Industry Project",
+        "status": "Ongoing",
+        "date": "May 2026 - Present",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUogrPltNgde6Hbxv4uzMIntOP54fGVA7E6IIA0OtuHQ&s=10",
+        "description": "Five AI agent applications built to replace human voice agents in call centre operations. Agents are orchestrated over IVR systems and integrated with a call centre management application, alongside contributions to the Workforce Management System.",
+        "tech": [
+          "Python",
+          "FastAPI",
+          "Google ADK",
+          "React",
+          "MySQL",
+          "IVR"
+        ],
+        "links": []
+      },
+      {
+        "title": "Agentic Campaign Manager",
+        "category": "Industry Project",
+        "date": "Oct 2025 - Dec 2025",
+        "icon": "https://cdn.dribbble.com/userupload/47294907/file/782272fcb8a4ff50497e770550e97c61.png?resize=420x&vertical=center",
+        "description": "Three specialised agents covering campaign creation, segment creation and data visualisation with database retrieval, orchestrated behind a supervisor agent that handles form filling and natural-language database interaction. Shipped with a new React and ShadCN UI connected through a Flask backend.",
+        "tech": [
+          "React",
+          "ShadCN",
+          "LangGraph",
+          "Anthropic AI",
+          "Flask"
+        ],
+        "links": []
+      },
+      {
+        "title": "Troubleshooter",
+        "category": "Industry Project",
+        "date": "Jan 2025 - Jul 2025",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsxXsJWv6x9ALuFS0y-RuYrwi__W3CgC7cgPWHpeoNyXGgeT9tYaYVTmc&s=10",
+        "description": "An agentic AI web application for operations engineers that resolves customer level 1 and level 2 tickets and processes Zabbix alerts. I contributed React front end, Express backend, Keycloak authentication, database and AI integration, then deployed it with Nginx, PM2 and later Docker. Demonstrated to more than five large-scale companies and now used by the internal operations team.",
+        "tech": [
+          "React",
+          "Node.js",
+          "Express",
+          "LangGraph",
+          "Keycloak",
+          "WebSocket",
+          "MongoDB",
+          "PostgreSQL",
+          "Azure Search",
+          "Docker"
+        ],
+        "links": []
+      },
+      {
+        "title": "Compose",
+        "category": "Industry Project",
+        "date": "Dec 2025 - Apr 2026",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxzO7KyzeGVRUBijV424Ghlw2islYx54P6aftNEl_CHw&s",
+        "description": "Rebuilt the front end of the Compose project in React, migrating away from an existing Angular 7 implementation, with Ant Design components and REST API integration throughout.",
+        "tech": [
+          "React",
+          "Ant Design",
+          "REST API",
+          "Windsurf"
+        ],
+        "links": []
+      },
+      {
+        "title": "InsightDB",
+        "category": "Industry Project",
+        "date": "Jan 2025 - May 2025",
+        "icon": "https://www.ema.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fq7d1vb20%2Fproduction%2F1eb472ad3554a8779b3adb9081a770452b1fd1da-1920x1080.jpg%3Fw%3D2048%26fm%3Dwebp%26q%3D75%26fit%3Dmax&w=3840&q=75",
+        "description": "An AI agent that queries databases using natural language. I worked across the full stack, on the LangChain and RAG integration, and on deployment to a local Linux server behind Nginx.",
+        "tech": [
+          "React",
+          "Node.js",
+          "Express",
+          "LangChain",
+          "RAG",
+          "PostgreSQL",
+          "MongoDB",
+          "Keycloak",
+          "Nginx"
+        ],
+        "links": []
+      },
+      {
+        "title": "Tea Leaf Disease Detection via Machine Learning",
+        "category": "Academic Project",
+        "date": "Jan 2024 - Nov 2024",
+        "icon": "https://cdn.dribbble.com/userupload/15954915/file/original-8a82090551c881e4ea170f035258f7bb.png?resize=752x&vertical=center",
+        "badge": "Published",
+        "description": "Final year research project, published and presented at the APITT International Conference 2024. Machine learning and deep learning models classify tea leaf diseases into distinct classes using a novel dataset collected for the project, with the deep learning model deployed on Hugging Face. I implemented the models, image preprocessing, user authentication, the Flutter mobile UI/UX and the Flask backend deployed on Google Cloud.",
+        "tech": [
+          "Python",
+          "TensorFlow",
+          "Flutter",
+          "Flask",
+          "Hugging Face",
+          "Google Cloud"
+        ],
+        "links": []
+      },
+      {
+        "title": "Fuel Management System",
+        "category": "Academic Project",
+        "date": "Aug 2024 - Nov 2024",
+        "icon": "https://island.lk/wp-content/uploads/2026/05/fuel-QR.webp",
+        "description": "Four web portals and one mobile application that manage the fuel quota allocated to each vehicle, modelled on the system Sri Lanka used during the pandemic. I built the mobile application with its related microservices and the inter-service communication between them.",
+        "tech": [
+          "Java",
+          "Spring Boot",
+          "Microservices",
+          "Flutter",
+          "REST API"
+        ],
+        "links": []
+      },
+      {
+        "title": "Final Year Project Marks Portal",
+        "category": "Academic Project",
+        "date": "Jan 2023 - Sep 2023",
+        "icon": "https://naxotop.com/wp-content/uploads/2022/12/New-Project-6.webp",
+        "description": "A web application for entering final year project marks for the Department of Electrical and Information Engineering. I helped build user authentication and implemented all CRUD operations for the dynamically changing evaluation forms, one of the project's core features.",
+        "tech": [
+          "MongoDB",
+          "Express",
+          "React",
+          "Node.js",
+          "REST API"
+        ],
+        "links": []
+      }
+    ]
+  },
+  "blog": [
+    {
+      "image": "images/bot.jpeg",
+      "date": "Feb 26, 2024",
+      "author": "Admin",
+      "title": "Chat Bot Development with the OpenAI Assistant API: A Step-by-Step Guide",
+      "link": "https://medium.com/@tharushiwitharana/chat-bot-development-with-the-openai-assistant-api-a-step-by-step-guide-8fa5c989204b",
+      "excerpt": [
+        "Are you looking to generate responses to questions by using AI? Look no further! OpenAI's Assistant API provides a powerful tool for developers to create natural language generation (NLG) applications. This blog post will explain the basics of using the OpenAI Assistant API with a simple code example.",
+        "Here I will show how to create AI assistants within your applications to generate answers for the questions based on the uploaded files, and databases. Open AI API provides the three most significant tools. These are code interpreter, retrieval, and Function calling. In this blog post, I will use retrieval and function calling to develop a chatbot."
+      ],
+      "readTime": "6 min read",
+      "summary": "A step-by-step walkthrough of building a chatbot on OpenAI's Assistant API, using retrieval and function calling to answer questions from your own files and databases.",
+      "tags": [
+        "OpenAI API",
+        "Chatbot",
+        "Python",
+        "NLG"
+      ]
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 Tharushi Witharana"
+  },
+  "getInTouch": {
+    "title": "Get In Touch",
+    "blurb": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!",
+    "ctaLabel": "Download My Resume",
+    "ctaHref": "data/Tharushi_WItharana_Software_Engineering_CV.pdf",
+    "social": [
+      {
+        "icon": "icon-github",
+        "href": "https://github.com/TharuWitharana",
+        "label": "GitHub"
+      },
+      {
+        "icon": "icon-linkedin",
+        "href": "https://www.linkedin.com/in/tharushi-maleesha-witharana-b755001b6",
+        "label": "LinkedIn"
+      },
+      {
+        "icon": "icon-envelope",
+        "href": "mailto:tharushiwitharana@gmail.com",
+        "label": "Email"
+      }
+    ],
+    "ctaDownload": "Tharushi-Witharana-CV.pdf"
+  }
+}
