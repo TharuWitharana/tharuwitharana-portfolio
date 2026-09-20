@@ -28,20 +28,60 @@
 
 
    // Burger Menu
+	var $nav = $('#ftco-nav');
+	var $navToggle = $('.js-fh5co-nav-toggle');
+
+	var navIsOpen = function() {
+		return $nav.hasClass('show');
+	};
+
+	var closeNav = function() {
+		if ( navIsOpen() ) {
+			$nav.collapse('hide');
+		}
+	};
+
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		// Bootstrap's collapse plugin owns the open/close state; we only mirror
+		// it onto the toggle so the icon and aria state stay in sync.
+		$nav.on('show.bs.collapse', function(){
+			$navToggle.addClass('active').attr('aria-expanded', true);
+			$('body').addClass('nav-open');
+		});
 
-			event.preventDefault();
+		$nav.on('hide.bs.collapse', function(){
+			$navToggle.removeClass('active').attr('aria-expanded', false);
+			$('body').removeClass('nav-open');
+		});
 
-			if ( $('#ftco-nav').is(':visible') ) {
-				$(this).removeClass('active');
-			} else {
-				$(this).addClass('active');	
+		// Tapping anywhere outside the open menu closes it.
+		$(document).on('click', function(event){
+			if ( !navIsOpen() ) return;
+			if ( $(event.target).closest('#ftco-nav, .js-fh5co-nav-toggle').length ) return;
+			closeNav();
+		});
+
+		// Escape closes it and returns focus to the toggle.
+		$(document).on('keydown', function(event){
+			if ( event.key === 'Escape' && navIsOpen() ) {
+				closeNav();
+				$navToggle.focus();
 			}
+		});
 
-			
-			
+		// Never leave a collapsed menu stranded open when the viewport grows
+		// past the breakpoint and the links become a normal inline row.
+		var resizeTimer;
+		$(window).on('resize', function(){
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function(){
+				if ( window.innerWidth >= 992 && navIsOpen() ) {
+					$nav.removeClass('show');
+					$navToggle.removeClass('active').attr('aria-expanded', false);
+					$('body').removeClass('nav-open');
+				}
+			}, 150);
 		});
 
 	};
@@ -55,12 +95,29 @@
 	    event.preventDefault();
 
 	    var href = $.attr(this, 'href');
+	    var $target = $(href);
 
-	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 70
-	    }, 500, function() {
-	    	// window.location.hash = href;
-	    });
+	    if ( !$target.length ) return;
+
+	    var scrollToTarget = function() {
+	    	// Offset by the fixed bar's real height so the section heading
+	    	// never ends up hidden underneath it.
+	    	var $bar = $('.ftco-navbar-light');
+	    	var offset = $bar.css('position') === 'fixed' ? $bar.outerHeight() : 70;
+
+	    	$('html, body').animate({
+	    	    scrollTop: $target.offset().top - offset
+	    	}, 500);
+	    };
+
+	    // Close the mobile menu first. The collapsing panel changes the page
+	    // height, so only measure the target once it has finished collapsing.
+	    if ( navIsOpen() ) {
+	    	$nav.one('hidden.bs.collapse', scrollToTarget);
+	    	closeNav();
+	    } else {
+	    	scrollToTarget();
+	    }
 		});
 
 	};

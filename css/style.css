@@ -8796,11 +8796,22 @@ h1, h2, h3, h4, h5,
     list-style: none;
     margin-bottom: 10px; }
     .ftco-about ul.about-info li span {
-      width: calc(100% - 130px); }
+      /* Take the remaining width and wrap inside it. Long unbroken values
+         such as an email address must break rather than overflow the
+         column on narrow screens. */
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word; }
       .ftco-about ul.about-info li span:first-child {
         font-weight: 600;
         color: #fff;
-        width: 130px; }
+        /* Sized to the longest label ("LinkedIn:") instead of a wide fixed
+           column, so the value starts close to its label. */
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 92px;
+        margin-right: 12px; }
 
 .ftco-about .counter-wrap .text p {
   font-size: 20px; }
@@ -10585,5 +10596,236 @@ textarea.form-control {
 @media (max-width: 767.98px) {
   .project-card-body {
     padding: 20px 20px 18px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Mobile navigation
+   ------------------------------------------------------------------ */
+
+.ftco-navbar-light .navbar-toggler {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 10px 10px;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 991.98px) {
+  /* Pin the bar so the menu button is always in the top-right corner,
+     no matter how far down the page has scrolled.
+
+     The theme slides the bar out of view with `margin-top: -130px` as soon
+     as `.scrolled` is set (past 150px), and only brings it back once
+     `.awake` is added (past 350px) -- with `.sleep` sliding it away again
+     on the way back up. That hide/reveal is fine for the desktop bar but
+     leaves the mobile menu button missing for a whole scroll band, so we
+     opt every state out of it.
+
+     The theme also drops the bar's vertical padding to zero on `.scrolled`
+     (`padding: 0 15px`), which makes the brand and menu button jump upward
+     the moment you scroll past 150px. Pin the padding so both states are
+     visually identical. */
+  .ftco-navbar-light,
+  .ftco-navbar-light.scrolled,
+  .ftco-navbar-light.scrolled.awake,
+  .ftco-navbar-light.scrolled.sleep {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    margin-top: 0 !important;
+    padding: 0 15px !important;
+    z-index: 1030;
+    background: #000000 !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
+
+  /* The bar no longer takes up flow space, so give the first section
+     room to clear it. */
+  body {
+    padding-top: 62px;
+  }
+
+  /* Brand and toggle share a fixed-height header row; the collapse panel
+     is a third flex item that wraps onto its own line underneath. The
+     toggle must NOT be absolutely positioned here -- the container grows
+     to the full height of the open menu, so a centred absolute toggle
+     would float down into the middle of the panel. */
+  .ftco-navbar-light .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* The theme grows the brand's vertical padding from .7rem to 1rem on
+     `.scrolled`, which makes the whole bar ~10px taller mid-scroll. Zero
+     the padding and let the fixed height do the centring, in both states. */
+  .ftco-navbar-light .navbar-brand,
+  .ftco-navbar-light.scrolled .navbar-brand {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 24px !important;
+    line-height: 1;
+  }
+
+  .ftco-navbar-light .navbar-toggler,
+  .ftco-navbar-light.scrolled .navbar-toggler {
+    height: 62px;
+    margin: 0;
+    padding: 0 0 0 10px;
+    /* `.scrolled` bumps this to 16px; pin it so the row can't resize. */
+    font-size: 15px !important;
+    line-height: 1;
+    z-index: 2;
+    /* The theme turns the toggle near-black once `.scrolled` is set, which
+       is invisible against the black mobile bar. The icon bars inherit
+       `currentColor`, so keep it white in every state. */
+    color: #fff !important;
+  }
+
+  /* Force the panel onto its own row below the header. */
+  .ftco-navbar-light .navbar-collapse {
+    flex-basis: 100%;
+  }
+
+  .ftco-navbar-light .navbar-toggler:hover,
+  .ftco-navbar-light .navbar-toggler:focus,
+  .ftco-navbar-light.scrolled .navbar-toggler:hover,
+  .ftco-navbar-light.scrolled .navbar-toggler:focus {
+    color: #8b5cf6 !important;
+  }
+
+  /* Same problem for the brand, which the theme also darkens. */
+  .ftco-navbar-light.scrolled .navbar-brand,
+  .ftco-navbar-light .navbar-brand {
+    color: #fff !important;
+  }
+
+  /* Lock the header row's height so nothing the `.scrolled` state changes
+     can resize the bar. */
+  .ftco-navbar-light .container,
+  .ftco-navbar-light.scrolled .container {
+    min-height: 62px;
+  }
+}
+
+.nav-toggle-label {
+  font-size: 15px;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* Hamburger that morphs into a close (X) icon when the menu is open. */
+.nav-toggle-icon {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 18px;
+  flex: 0 0 24px;
+}
+.nav-toggle-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .3s ease, opacity .2s ease, top .3s ease;
+}
+.nav-toggle-icon span:nth-child(1) { top: 0; }
+.nav-toggle-icon span:nth-child(2) { top: 8px; }
+.nav-toggle-icon span:nth-child(3) { top: 16px; }
+
+.js-fh5co-nav-toggle.active .nav-toggle-icon span:nth-child(1) {
+  top: 8px;
+  transform: rotate(45deg);
+}
+.js-fh5co-nav-toggle.active .nav-toggle-icon span:nth-child(2) {
+  opacity: 0;
+}
+.js-fh5co-nav-toggle.active .nav-toggle-icon span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 991.98px) {
+  /* The bar is fixed, so the open panel overlays the page -- it needs its
+     own background, and must scroll internally on short screens rather
+     than running off the bottom of the viewport. */
+  .ftco-navbar-light .navbar-collapse {
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: #000000;
+  }
+
+  .ftco-navbar-light .navbar-nav {
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Full-width rows give each link a comfortable tap target. */
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    display: block;
+    padding-top: .85rem !important;
+    padding-bottom: .85rem !important;
+  }
+
+  .ftco-navbar-light .navbar-nav > .nav-item + .nav-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* The underline hover effect is pointless on touch and makes the
+     active link look broken, so show a left accent bar instead. */
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
+    display: none;
+  }
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link.active {
+    padding-left: 12px !important;
+    border-left: 3px solid #8b5cf6;
+  }
+}
+
+@media (max-width: 991.98px) and (prefers-reduced-motion: reduce) {
+  .navbar-collapse.collapsing {
+    transition: none;
+  }
+}
+
+.nav-toggle-icon span {
+  transition-duration: .3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-icon span {
+    transition: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   About: label / value list
+   ------------------------------------------------------------------ */
+
+/* Links carry the value text, so they need to break too -- otherwise an
+   email or long profile name overflows the column. */
+.ftco-about ul.about-info li span a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 575.98px) {
+  .ftco-about ul.about-info li span:first-child {
+    min-width: 78px;
+    margin-right: 8px;
   }
 }
