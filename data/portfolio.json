@@ -282,19 +282,24 @@
     "showLessLabel": "Show Less",
     "items": [
             {
-        "title": "Easy Rent",
-        "category": "Personal Project",
+        "title": "VillaOnboard",
+        "category": "Freelance Project",
         "status": "Ongoing",
         "date": "Sept 2026 - Present",
         "icon": "https://cdn.dribbble.com/userupload/42830572/file/original-fdb253e8e002b59b56a2503429225c18.png?resize=400x0",
-        "description": "A rental marketplace that makes finding a place to stay straightforward, covering houses, apartments, annexes, boarding houses and rooms. Owners list properties with photos, rent, facilities and location, while renters search and filter by area, budget, property type and availability, then contact owners directly. Built with a React front end and a Node.js and Express backend over MySQL, with Keycloak handling authentication and role based access for owners and renters. Planned next: a payment gateway for booking fees and advance payments, map based search, and an AI assistant that answers listing questions in natural language.",
+        "description": "A full-stack platform for a property onboarding agency in southern Sri Lanka that gets villa, guesthouse and hotel owners listed on Airbnb, Booking.com and Agoda, replacing a manual Excel-based process with one secure system. Features keyboard-first multi-step intake forms with Excel-style tables, role based access for Owner, Admin, Executive and Customer, per-platform onboarding status tracking with task assignment, an AES-256-GCM encrypted credentials vault with audit logging, template-based AI prompt generation for listing content, WhatsApp handover messages, KPI dashboards and a customer self-service portal. Built with Next.js and Ant Design over a Node.js and Express API with Prisma and PostgreSQL, Better Auth for authentication, Cloudflare R2 for file storage, and deployed as Docker containers on a Contabo VPS through Dokploy.",
         "tech": [
-          "React",
+          "Next.js",
+          "TypeScript",
+          "Ant Design",
           "Node.js",
           "Express",
-          "MySQL",
-          "Keycloak",
-          "REST API"
+          "Prisma",
+          "PostgreSQL",
+          "Better Auth",
+          "Docker",
+          "Dokploy",
+          "Cloudflare R2"
         ],
         "links": []
       },
